@@ -34,11 +34,11 @@ class SavePlot():
         self.savefile = savefile
         self.mode = mode
         
-    def message(self, text):
+    def _message(self, text):
         if self.mode == 'normal':
             print(text)
         
-    def plot(self, plt, auto_overwrite=False):
+    def plot(self, plt, auto_overwrite=False, saveformat='pdf'):
         """ Show a matplotlib plot or save it as a pdf, then close the object.
             
             Parameters
@@ -48,13 +48,15 @@ class SavePlot():
             * auto_overwrite : bool, optional
                 If true, overwrites existing files without prompt. Otherwise
                 asks for a new filename.
+            * format : string
+                Format in which to save plot (if saving)
         """
         
         if self.mode == 'quiet':
             auto_overwrite = True
         
         if self.save and self.savefile is None:
-            self.message('Please give valid savefile')
+            self._message('Please give valid savefile')
             sys.exit(1)
         
         if self.save:
@@ -64,8 +66,8 @@ class SavePlot():
                 except:
                     sys.exit(1)
 
-            plt.savefig(self.savefile, format='pdf')
-            self.message('Saved {}'.format(self.savefile))
+            plt.savefig(self.savefile, format=saveformat)
+            self._message('Saved {}'.format(self.savefile))
         else:
             plt.show()
             
