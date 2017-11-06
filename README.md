@@ -48,8 +48,9 @@ a legend when given a list of colours and labels.
 
 ## Installing
 
-SavePlot requires Python3 and the corresponding versions of NumPy and Matplotlib.
+SavePlot requires Python 3.x and the corresponding versions of NumPy and Matplotlib. 
 
+As you would expect, it can be installed with:
 ```
 python setup.py build_ext
 
