@@ -1,4 +1,7 @@
-# SavePlot - Python module for easily displaying or saving matplotlib plots.
+# SavePlot - Python module for displaying or saving matplotlib plots.
+
+(C) Keziah Milligan, 2017
+GPL v3. See https://www.gnu.org/licenses/gpl-3.0.en.html
 
 I often have to switch between showing and saving plots when working. This can be a 
 faff when the plt.show()/plt.savefig() commands are at the end of the script, so 
