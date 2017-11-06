@@ -25,7 +25,7 @@ class SavePlot():
         * savefile : string, optional
             File to which the plot should be saved.
             
-        * mode : {'normal' 'quiet'}
+        * mode : {'normal', 'quiet'}
             If quiet, suppress all messages to terminal. This will also
             automatically set auto_overwrite to True in plot().
         """
@@ -84,16 +84,16 @@ def save_legend(colours, labels, savefile, **kwargs):
     
         Parameters
         ----------
-        colours:
+        * colours : list
             list of colours
             
-        labels:
+        * labels : list
             list of labels
             
-        savefile:
+        * savefile : string
             path to write legend.pdf to
         
-        kwargs:
+        * kwargs :
             matplotlib.pyplot.figlegend keyword arguments
     """
     
@@ -124,6 +124,10 @@ def save_legend(colours, labels, savefile, **kwargs):
     
     
 def path_exists(savefile):
+    """ Check if a path exists. If it does, prompt to change/overwrite.
+    
+        Returns a path.
+    """
     
     while os.path.exists(savefile):
         print('{} already exists. Would you like to overwrite it? '
