@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """ Module to save/show matplotlib plots (SavePlot) or to save a legend as a
 pdf (save_legend).
 
