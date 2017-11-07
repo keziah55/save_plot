@@ -75,6 +75,7 @@ class SavePlt:
     
         return savefile
             
+    
 class SavePlot(SavePlt):
     
     def __init__(self, save=False, savefile=None, auto_overwrite=False,

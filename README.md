@@ -13,10 +13,14 @@ show (`False`) the figure.
 Then, when the actual plotting is required, you simply call SavePlot.plot(plt).
 
 When saving, if the file already exists, SavePlot will prompt you to overwrite/rename.
-This behaviour can be overridden by setting `auto_overwrite=True` in the SavePlot.plot args.
-The default format is pdf. This can also be changed in the SavePlot.plot args.
+This behaviour can be overridden by setting `auto_overwrite=True` in the constructor.
+The default format is pdf. This can also be changed in the constructor.
+Output to stdout can be supressed by stating `mode='quiet'`.
 
-Output to stdout can be supressed by stating `mode='quiet'` when creating the object.
+save_plot also includes an object which will create a stand-alone legend, `SaveLegend`.
+The constructor is identical to that of SavePlot (except it will always save the output: 
+no boolean is needed). `SaveLegend.save` takes a list of labels and colours and/or linestyle
+and any other `matplotlib.pyplot.figlegend` keyword arguments.
 
 
 ## Example - saving a plot
@@ -40,14 +44,8 @@ sp.plot(plt)
 
 ```
 
-Also see `example.py`.
+Also see `example.py` for a demonstration of both `SavePlot` and `SaveLegend`.
 
-
-
-## save_legend
-
-saveplot.py also contains a function called save_legend which allows you to save just
-a legend when given a list of colours and labels.
 
 
 ## Installing
