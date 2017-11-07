@@ -27,7 +27,7 @@ import numpy as np
 from save_plot import SavePlot
 
 # make SavePlot object which will save the figure
-sp = SavePlot(True, 'test.pdf')
+sp = SavePlot(True, 'test.pdf', auto_overwrite=True)
 
 ##############
 ## do stuff ##
@@ -36,10 +36,11 @@ sp = SavePlot(True, 'test.pdf')
 plt.plot(x,y)
 
 # save the plot
-# if the file already exists, overwrite without prompting
-sp.plot(plt, auto_overwrite=True)
+sp.plot(plt)
 
 ```
+
+Also see `example.py`.
 
 
 
