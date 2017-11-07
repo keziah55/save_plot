@@ -4,9 +4,10 @@
 GPL v3. See https://www.gnu.org/licenses/gpl-3.0.en.html
 
 I often have to switch between showing and saving plots when working. This can be a 
-faff when the plt.show()/plt.savefig() commands are at the end of the script, so 
-occasionally I've accidentally overwritten a graph or run something only to find I forgot
-to tell it to save the graph.
+faff when the plt.show()/plt.savefig() commands are at the very end of the script and
+the parameters I'm changing are at the top.
+Occasionally I've accidentally overwritten a graph or leave a huge program to run to a while, 
+only to find I forgot to tell it to save the graphs it generates.
 
 SavePlot allows you to create a SavePlot object, telling it whether to save (`True`) or 
 show (`False`) the figure.
@@ -14,8 +15,8 @@ Then, when the actual plotting is required, you simply call SavePlot.plot(plt).
 
 When saving, if the file already exists, SavePlot will prompt you to overwrite/rename.
 This behaviour can be overridden by setting `auto_overwrite=True` in the constructor.
-The default format is pdf. This can also be changed in the constructor.
 Output to stdout can be supressed by stating `mode='quiet'`.
+The default file format is pdf. This can also be changed in the constructor.
 
 save_plot also includes an object which will create a stand-alone legend, `SaveLegend`.
 The constructor is identical to that of SavePlot (except it will always save the output: 
