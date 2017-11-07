@@ -121,7 +121,7 @@ class SavePlot(SavePlt):
         if self.save:
             if not self.auto_overwrite:
                 try:
-                    self.savefile = path_exists(self.savefile)
+                    self.savefile = self.path_exists(self.savefile)
                 except:
                     sys.exit(1)
 
@@ -135,7 +135,7 @@ class SavePlot(SavePlt):
         
 class SaveLegend(SavePlt):
         
-    def save_legend(self, labels, colours=None, linestyles=None, 
+    def save(self, labels, colours=None, linestyles=None, 
                     figsize=None, **kwargs):
         """ Save a matplotlib legend as a pdf (without a plot).
         
@@ -164,7 +164,7 @@ class SaveLegend(SavePlt):
         """
 
         # create a figure for the data
-        matplotlib.pyplot.figure()
+        fig = matplotlib.pyplot.figure()
         ax = matplotlib.pyplot.gca()
         
         if colours is None and linestyles is None:
@@ -179,22 +179,27 @@ class SaveLegend(SavePlt):
         x = np.arange(10)
         
         for i in range(len(colours)):
-            matplotlib.pyplot.plot(x, x * (i+1), colours[i], label=labels[i], linestyle=linestyles[i])
+            matplotlib.pyplot.plot(x, x * (i+1), colours[i], label=labels[i], 
+                                   linestyle=linestyles[i])
         
         # create a second figure for the legend
         figLegend = matplotlib.pyplot.figure(figsize=figsize)
         
         # produce a legend for the objects in the other figure
         # loc is a required argument, but makes no difference when only the legend is being displayed
-        matplotlib.pyplot.figlegend(*ax.get_legend_handles_labels(), loc='center', **kwargs)
+        matplotlib.pyplot.figlegend(*ax.get_legend_handles_labels(), 
+                                    loc='center', **kwargs)
 
         if not self.auto_overwrite:
             try:
-                self.savefile = path_exists(self.savefile)
+                self.savefile = self.path_exists(self.savefile)
             except:
                 sys.exit(1)
 
         figLegend.savefig(self.savefile, format=self.saveformat)
         
         self._message('Saved {}'.format(self.savefile))
+        
+        matplotlib.pyplot.close(fig)
+        matplotlib.pyplot.close(figLegend)
     
