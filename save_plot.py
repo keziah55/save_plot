@@ -65,8 +65,15 @@ class SavePlt:
                   '[Y/n]'.format(savefile))
             ow = input()
             if ow.lower() == 'n':
-                print('Please enter new file name: ')
-                savefile = input()
+                # get head of path so that user does not have to type full path
+                # TODO change this so that the path can be changed by user
+                head, _ = os.path.split(savefile)
+                print('Please enter new file name:')
+                if head: # if not cwd, add '/' to head
+                    name = input(head+os.path.sep)
+                else:
+                    name = input()
+                savefile = os.path.join(head, name)
             elif ow.lower() == 'y' or not ow:
                 break
             elif ow.lower() != 'y':
