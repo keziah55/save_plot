@@ -142,7 +142,7 @@ class SavePlot(SavePlt):
         
 class SaveLegend(SavePlt):
         
-    def save(self, labels, colours=None, linestyles=None, 
+    def save(self, labels, colours=None, linestyles=None, markers=None,
                     figsize=None, **kwargs):
         """ Save a matplotlib legend as a pdf (without a plot).
         
@@ -158,7 +158,11 @@ class SaveLegend(SavePlt):
                 list of colours. If None, black will be used for all.
             
             * linestyles : list
-                list of linestyles. If None, solid line will be used for all.
+                list of linestyles. If None, and markers is None, solid line 
+                will be used for all.
+                
+            * markers : list
+                list of markers. If None, will be ignored.
                 
             * figsize : tuple
                 tuple of wisth and height (inches) of output figure. 
@@ -182,12 +186,14 @@ class SaveLegend(SavePlt):
             colours = ['black'] * len(labels)
         if linestyles is None:
             linestyles = ['-'] * len(labels)
+        if markers is None:
+            markers = [None] * len(labels)
             
         x = np.arange(10)
         
         for i in range(len(colours)):
             matplotlib.pyplot.plot(x, x * (i+1), colours[i], label=labels[i], 
-                                   linestyle=linestyles[i])
+                                   linestyle=linestyles[i], marker=markers[i])
         
         # create a second figure for the legend
         figLegend = matplotlib.pyplot.figure(figsize=figsize)

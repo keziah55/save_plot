@@ -18,6 +18,7 @@ amp = [0.5, 1, 0.75, 0.25]
 # colours, linestyles and labels
 c = ['darkorange','dodgerblue', 'firebrick', 'green']
 ls = ['-', '--', ':', '-.']
+mk = ['o', None, None, None]
 labels = list('{}Hz'.format(f) for f in freq)
 
 # plot some waves
@@ -33,4 +34,4 @@ plt.xlabel('x')
 sp.plot(plt)
 
 # save the legend
-sl.save(labels, colours=c, linestyles=ls, figsize=(1,1), ncol=1)
+sl.save(labels, colours=c, linestyles=ls, markers=mk, figsize=(1,1), ncol=1)
