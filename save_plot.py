@@ -165,7 +165,7 @@ class SaveLegend(SavePlt):
                 list of markers. If None, will be ignored.
                 
             * figsize : tuple
-                tuple of wisth and height (inches) of output figure. 
+                tuple of width and height (inches) of output figure. 
                 If None, will be set to rc.figure.figsize.
             
             * kwargs :
