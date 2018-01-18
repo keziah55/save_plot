@@ -143,7 +143,7 @@ class SavePlot(SavePlt):
 class SaveLegend(SavePlt):
         
     def save(self, labels, colours=None, linestyles=None, markers=None,
-                    figsize=None, **kwargs):
+             figsize=None, **kwargs):
         """ Save a matplotlib legend as a pdf (without a plot).
         
             Parameters
