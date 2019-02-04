@@ -19,7 +19,7 @@ Output to stdout can be supressed by stating `mode='quiet'`.
 
 save_plot.py also includes an object which will create a stand-alone legend, `SaveLegend`.
 The constructor is identical to that of SavePlot (except it will always save the output: 
-no boolean is needed). `SaveLegend.save` takes a list of labels and colours and/or linestyle
+no boolean is needed). `SaveLegend.plot` takes a list of labels and colours and/or linestyle
 and any other `matplotlib.pyplot.figlegend` keyword arguments.
 
 All figures will be saved as PDFs, with metadata set by SavePlot. 

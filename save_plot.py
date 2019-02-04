@@ -9,7 +9,7 @@ either to overwrite it or enter new name.
 
 import os.path
 import sys
-import abc
+from abc import abstractmethod
 import numpy as np
 import matplotlib.pyplot
 from matplotlib.backends.backend_pdf import PdfPages
@@ -18,7 +18,7 @@ import getpass
 
 class SavePlt:
     
-    __metaclass__ = abc.ABCMeta
+#    __metaclass__ = abc.ABCMeta
     
     def __init__(self, savefile=None, auto_overwrite=False, mode='normal'):
         """ Save a matplotlib figure as a pdf.
@@ -48,6 +48,9 @@ class SavePlt:
         
         if self.mode == 'quiet':
             self.auto_overwrite = True
+            
+    @abstractmethod
+    def plot(self): pass
             
     def set_savefile(self, savefile):
         """ Set savefile """
@@ -166,7 +169,7 @@ class SavePlot(SavePlt):
         
 class SaveLegend(SavePlt):
         
-    def save(self, labels, colours=None, linestyles=None, markers=None,
+    def plot(self, labels, colours=None, linestyles=None, markers=None,
              figsize=None, **kwargs):
         """ Save a matplotlib legend as a pdf (without a plot).
         

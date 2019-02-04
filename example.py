@@ -34,4 +34,4 @@ plt.xlabel('x')
 sp.plot(plt)
 
 # save the legend
-sl.save(labels, colours=c, linestyles=ls, markers=mk, figsize=(1,1), ncol=1)
+sl.plot(labels, colours=c, linestyles=ls, markers=mk, figsize=(1,1), ncol=1)
