@@ -155,7 +155,7 @@ class SavePlot(SavePlt):
                     
             self._make_pdf_object(self.savefile)
 
-            plt.savefig(self.pdf, format=self.saveformat)
+            plt.savefig(self.pdf, format=self.saveformat, bbox_inches='tight')
             self.pdf.close()
             self._message('Saved {}'.format(self.savefile))
         else:
@@ -223,7 +223,8 @@ class SaveLegend(SavePlt):
         figLegend = matplotlib.pyplot.figure(figsize=figsize)
         
         # produce a legend for the objects in the other figure
-        # loc is a required argument, but makes no difference when only the legend is being displayed
+        # loc is a required argument, but makes no difference when only the 
+        # legend is being displayed
         matplotlib.pyplot.figlegend(*ax.get_legend_handles_labels(), 
                                     loc='center', **kwargs)
 
@@ -234,7 +235,8 @@ class SaveLegend(SavePlt):
                 sys.exit(1)
 
         self._make_pdf_object(self.savefile)
-        figLegend.savefig(self.pdf, format=self.saveformat)
+        figLegend.savefig(self.pdf, format=self.saveformat, 
+                          bbox_inches='tight')
         self.pdf.close()
         
         self._message('Saved {}'.format(self.savefile))
