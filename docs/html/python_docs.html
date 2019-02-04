@@ -1,0 +1,205 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Python documentation &#8212; SavePlot 0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="ReadMe File" href="readme_link.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="python-documentation">
+<span id="python-docs-saveplot"></span><h1>Python documentation<a class="headerlink" href="#python-documentation" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-save_plot"><span id="saveplot-module"></span></span><p>Module to save/show matplotlib plots (SavePlot) or to save a legend
+(SaveLegend)
+as a pdf.</p>
+<p>When the <cite>plot()</cite> method is called, SavePlot checks if given file name already
+exists.
+If it does, you will be prompted either to overwrite it or enter new name.</p>
+<dl class="class">
+<dt id="save_plot.SavePlot">
+<em class="property">class </em><code class="descclassname">save_plot.</code><code class="descname">SavePlot</code><span class="sig-paren">(</span><em>save=False</em>, <em>savefile=None</em>, <em>auto_overwrite=False</em>, <em>mode='normal'</em><span class="sig-paren">)</span><a class="headerlink" href="#save_plot.SavePlot" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="save_plot.SavePlot.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>save=False</em>, <em>savefile=None</em>, <em>auto_overwrite=False</em>, <em>mode='normal'</em><span class="sig-paren">)</span><a class="headerlink" href="#save_plot.SavePlot.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create SavePlot object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>save</strong> (<em>bool</em>) – If True, save the pdf. Otherwise show the plot.</li>
+<li><strong>savefile</strong> (<em>string</em><em>, </em><em>optional</em>) – File to which the plot should be saved.</li>
+<li><strong>auto_overwrite</strong> (<em>bool</em>) – if file exists, overwrite without prompting.
+Note that if ‘quiet’ mode was selected, auto_overwrite will be
+True. Otherwise, defaults to False.</li>
+<li><strong>mode</strong> (<em>{'normal'</em><em>, </em><em>'quiet'}</em>) – If quiet, suppress all messages to terminal. This will also
+automatically set auto_overwrite to True in plot().</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="save_plot.SavePlot.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>plt</em><span class="sig-paren">)</span><a class="headerlink" href="#save_plot.SavePlot.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a matplotlib plot or save it as a pdf, then close the object.</p>
+<p>If saving, metadata is automatically added to the PDF, including
+the author name and the full path to the Python script that called
+this method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>plt</strong> (<em>matplotlib.pyplot object</em>) – The object to plot</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="save_plot.SaveLegend">
+<em class="property">class </em><code class="descclassname">save_plot.</code><code class="descname">SaveLegend</code><span class="sig-paren">(</span><em>savefile=None</em>, <em>auto_overwrite=False</em>, <em>mode='normal'</em><span class="sig-paren">)</span><a class="headerlink" href="#save_plot.SaveLegend" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="save_plot.SaveLegend.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>savefile=None</em>, <em>auto_overwrite=False</em>, <em>mode='normal'</em><span class="sig-paren">)</span><a class="headerlink" href="#save_plot.SaveLegend.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a matplotlib figure as a pdf.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>savefile</strong> (<em>string</em>) – path to write pdf to</li>
+<li><strong>auto_overwrite</strong> (<em>bool</em>) – if file exists, overwrite without prompting.
+Note that if ‘quiet’ mode was selected, auto_overwrite will be
+True. Otherwise, defaults to False.</li>
+<li><strong>mode</strong> (<em>{'normal'</em><em>, </em><em>'quiet'}</em>) – If quiet, suppress all messages to terminal. This will also
+automatically set auto_overwrite to True in plot().</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="save_plot.SaveLegend.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>labels</em>, <em>colours=None</em>, <em>linestyles=None</em>, <em>markers=None</em>, <em>figsize=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#save_plot.SaveLegend.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a matplotlib legend as a pdf.</p>
+<p>Metadata is automatically added to the PDF, including the author
+name and the full path to the Python script that called this method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>savefile</strong> (<em>string</em>) – path to write legend.pdf to</li>
+<li><strong>labels</strong> (<em>list</em>) – list of labels</li>
+<li><strong>colours</strong> (<em>list</em>) – list of colours. If None, black will be used for all.</li>
+<li><strong>linestyles</strong> (<em>list</em>) – list of linestyles. If None, and markers is None, solid line
+will be used for all.</li>
+<li><strong>markers</strong> (<em>list</em>) – list of markers. If None, will be ignored.</li>
+<li><strong>figsize</strong> (<em>tuple</em>) – tuple of width and height (inches) of output figure.
+If None, will be set to rc.figure.figsize.</li>
+<li><strong>kwargs</strong> – matplotlib.pyplot.figlegend keyword arguments
+<cite>loc</cite> is set to ‘center’, but other kwargs, such as <cite>ncol</cite> are
+available</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">SavePlot</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme_link.html">ReadMe File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme_link.html#saveplot-python-module-for-displaying-or-saving-matplotlib-plots">SavePlot - Python module for displaying or saving matplotlib plots.</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="readme_link.html" title="previous chapter">ReadMe File</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Keziah Milligan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/python_docs.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,20 @@
+.. _python-docs-saveplot:
+
+Python documentation
+********************
+
+.. _saveplot-module:
+
+
+
+.. automodule:: save_plot
+   
+.. autoclass:: SavePlot
+    :members: 
+    
+    .. automethod:: __init__
+    
+.. autoclass:: SaveLegend
+    :members: 
+    
+    .. automethod:: __init__
