@@ -1,10 +1,11 @@
-""" SavePlot
+""" 
+Module to save/show matplotlib plots (SavePlot) or to save a legend 
+(SaveLegend)
+as a pdf.
 
-Module to save/show matplotlib plots (SavePlot) or to save a legend as a
-pdf (save_legend).
-
-Checks if given file name already exists. If it does, you will be prompted 
-either to overwrite it or enter new name.
+When the `plot()` method is called, SavePlot checks if given file name already 
+exists. 
+If it does, you will be prompted either to overwrite it or enter new name.
 """
 
 import os.path
@@ -23,15 +24,15 @@ class SavePlt:
         
             Parameters
             ----------
-            * savefile : string
+            savefile : string
                 path to write pdf to
             
-            * auto_overwrite : bool
+            auto_overwrite : bool
                 if file exists, overwrite without prompting.
                 Note that if 'quiet' mode was selected, auto_overwrite will be
                 True. Otherwise, defaults to False.
                 
-            * mode : {'normal', 'quiet'}
+            mode : {'normal', 'quiet'}
                 If quiet, suppress all messages to terminal. This will also
                 automatically set auto_overwrite to True in plot().
 
@@ -115,18 +116,18 @@ class SavePlot(SavePlt):
         
             Parameters
             ----------
-            * save : bool 
+            save : bool 
                 If True, save the pdf. Otherwise show the plot.
                 
-            * savefile : string, optional
+            savefile : string, optional
                 File to which the plot should be saved.
                 
-            * auto_overwrite : bool
+            auto_overwrite : bool
                 if file exists, overwrite without prompting.
                 Note that if 'quiet' mode was selected, auto_overwrite will be
                 True. Otherwise, defaults to False.
                 
-            * mode : {'normal', 'quiet'}
+            mode : {'normal', 'quiet'}
                 If quiet, suppress all messages to terminal. This will also
                 automatically set auto_overwrite to True in plot().
         """
@@ -136,10 +137,14 @@ class SavePlot(SavePlt):
         
     def plot(self, plt):
         """ Show a matplotlib plot or save it as a pdf, then close the object.
+        
+            If saving, metadata is automatically added to the PDF, including 
+            the author name and the full path to the Python script that called
+            this method.
             
             Parameters
             ----------
-            * plt : matplotlib.pyplot object
+            plt : matplotlib.pyplot object
                 The object to plot
         """
 
@@ -169,31 +174,34 @@ class SaveLegend(SavePlt):
         
     def plot(self, labels, colours=None, linestyles=None, markers=None,
              figsize=None, **kwargs):
-        """ Save a matplotlib legend as a pdf (without a plot).
+        """ Save a matplotlib legend as a pdf.
+        
+            Metadata is automatically added to the PDF, including the author  
+            name and the full path to the Python script that called this method.
         
             Parameters
             ----------
-            * savefile : string
+            savefile : string
                 path to write legend.pdf to
                 
-            * labels : list
+            labels : list
                 list of labels
                 
-            * colours : list
+            colours : list
                 list of colours. If None, black will be used for all.
             
-            * linestyles : list
+            linestyles : list
                 list of linestyles. If None, and markers is None, solid line 
                 will be used for all.
                 
-            * markers : list
+            markers : list
                 list of markers. If None, will be ignored.
                 
-            * figsize : tuple
+            figsize : tuple
                 tuple of width and height (inches) of output figure. 
                 If None, will be set to rc.figure.figsize.
             
-            * kwargs :
+            kwargs :
                 matplotlib.pyplot.figlegend keyword arguments
                 `loc` is set to 'center', but other kwargs, such as `ncol` are
                 available

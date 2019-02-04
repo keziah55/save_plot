@@ -4,7 +4,7 @@
 GPL v3. See https://www.gnu.org/licenses/gpl-3.0.en.html
 
 I often have to switch between showing and saving plots when working. This can be a 
-faff when the plt.show()/plt.savefig() commands are at the very end of the script and
+faff when the `plt.show()` and/or `plt.savefig()` commands are at the very end of the script and
 the parameters I'm changing are at the top.
 Occasionally I've accidentally overwritten a graph or leave a huge program to run to a while, 
 only to find I forgot to tell it to save the graphs it generates.
