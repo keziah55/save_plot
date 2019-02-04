@@ -11,7 +11,7 @@ only to find I forgot to tell it to save the graphs it generates.
 
 SavePlot allows you to create a SavePlot object, telling it whether to save (`True`) or 
 show (`False`) the figure.
-Then, when the actual plotting is required, you simply call SavePlot.plot(plt).
+Then, when the actual plotting is required, you simply call `SavePlot.plot(plt)`.
 
 When saving, if the file already exists, SavePlot will prompt you to overwrite/rename.
 This behaviour can be overridden by setting `auto_overwrite=True` in the constructor.

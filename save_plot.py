@@ -18,8 +18,6 @@ import getpass
 
 class SavePlt:
     
-#    __metaclass__ = abc.ABCMeta
-    
     def __init__(self, savefile=None, auto_overwrite=False, mode='normal'):
         """ Save a matplotlib figure as a pdf.
         
