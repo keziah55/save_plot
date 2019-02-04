@@ -26,6 +26,7 @@ All figures will be saved as PDFs, with metadata set by SavePlot.
 The user name and the name of the Python script which called SavePlot are set as the PDF 
 author and subject, respectively.
 
+You can read the documentation [here](https://keziah55.github.io/save_plot/).
 
 ## Example - saving a plot
 ```python
