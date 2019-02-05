@@ -48,7 +48,7 @@ sp.plot(plt)
 
 ```
 
-Also see [example.py](https://github.com/keziah55/save_plot/blob/master/example.py) 
+Also see [example.py](https://github.com/keziah55/save_plot/blob/master/example.py)
 for a demonstration of both `SavePlot` and `SaveLegend`.
 
 
