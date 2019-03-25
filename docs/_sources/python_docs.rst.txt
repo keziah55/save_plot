@@ -1,6 +1,6 @@
 .. _python-docs-saveplot:
 
-Python documentation
+API documentation
 ********************
 
 .. _saveplot-module:
