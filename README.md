@@ -55,13 +55,11 @@ for a demonstration of both `SavePlot` and `SaveLegend`.
 
 ## Installing
 
-SavePlot requires Python 3.x and the corresponding versions of NumPy and Matplotlib. 
+SavePlot requires Python 3.x, NumPy and Matplotlib. 
 
-As you would expect, it can be installed with:
+It can be installed with:
 ```
-python setup.py build_ext
-
-sudo python setup.py install
+pip install .
 ```
 
 
