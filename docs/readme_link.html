@@ -1,25 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ReadMe File &#8212; SavePlot 0 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>ReadMe File &#8212; SavePlot 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="API documentation" href="python_docs.html" />
     <link rel="prev" title="Welcome to SavePlot’s documentation!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -29,15 +28,17 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
-  <div class="section" id="readme-file">
-<h1>ReadMe File<a class="headerlink" href="#readme-file" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="section" id="saveplot-python-module-for-displaying-or-saving-matplotlib-plots">
-<h1>SavePlot - Python module for displaying or saving matplotlib plots.<a class="headerlink" href="#saveplot-python-module-for-displaying-or-saving-matplotlib-plots" title="Permalink to this headline">¶</a></h1>
+  <section id="readme-file">
+<h1>ReadMe File<a class="headerlink" href="#readme-file" title="Permalink to this heading">¶</a></h1>
+</section>
+<section id="saveplot-python-module-for-displaying-or-saving-matplotlib-plots">
+<h1>SavePlot - Python module for displaying or saving matplotlib plots.<a class="headerlink" href="#saveplot-python-module-for-displaying-or-saving-matplotlib-plots" title="Permalink to this heading">¶</a></h1>
 <p>(C) Keziah Milligan, 2017
-GPL v3. See <a class="reference external" href="https://www.gnu.org/licenses/gpl-3.0.en.html">https://www.gnu.org/licenses/gpl-3.0.en.html</a></p>
+MIT Licence</p>
 <p>I often have to switch between showing and saving plots when working. This can be a
 faff when the <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> and/or <code class="docutils literal notranslate"><span class="pre">plt.savefig()</span></code> commands are at the very end of the script and
 the parameters I’m changing are at the top.
@@ -57,14 +58,14 @@ and any other <code class="docutils literal notranslate"><span class="pre">matpl
 The user name and the name of the Python script which called SavePlot are set as the PDF
 author and subject, respectively.</p>
 <p>You can read the documentation <a class="reference external" href="https://keziah55.github.io/save_plot/">here</a>.</p>
-<div class="section" id="example-saving-a-plot">
-<h2>Example - saving a plot<a class="headerlink" href="#example-saving-a-plot" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<section id="example-saving-a-plot">
+<h2>Example - saving a plot<a class="headerlink" href="#example-saving-a-plot" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">save_plot</span> <span class="kn">import</span> <span class="n">SavePlot</span>
 
 <span class="c1"># make SavePlot object which will save the figure</span>
-<span class="n">sp</span> <span class="o">=</span> <span class="n">SavePlot</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="s1">&#39;test.pdf&#39;</span><span class="p">,</span> <span class="n">auto_overwrite</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">sp</span> <span class="o">=</span> <span class="n">SavePlot</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;test.pdf&#39;</span><span class="p">,</span> <span class="n">auto_overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -77,21 +78,20 @@ author and subject, respectively.</p>
 </div>
 <p>Also see <a class="reference external" href="https://github.com/keziah55/save_plot/blob/master/example.py">example.py</a>
 for a demonstration of both <code class="docutils literal notranslate"><span class="pre">SavePlot</span></code> and <code class="docutils literal notranslate"><span class="pre">SaveLegend</span></code>.</p>
-</div>
-<div class="section" id="installing">
-<h2>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h2>
-<p>SavePlot requires Python 3.x and the corresponding versions of NumPy and Matplotlib.</p>
-<p>As you would expect, it can be installed with:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>python setup.py build_ext
-
-sudo python setup.py install
+</section>
+<section id="installing">
+<h2>Installing<a class="headerlink" href="#installing" title="Permalink to this heading">¶</a></h2>
+<p>SavePlot requires Python 3.x, NumPy and Matplotlib.</p>
+<p>It can be installed with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -126,27 +126,33 @@ sudo python setup.py install
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2017, Keziah Milligan.
+      &copy;2023, Keziah Milligan.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
       <a href="_sources/readme_link.rst.txt"
